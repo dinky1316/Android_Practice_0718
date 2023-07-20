@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">test8_dum</string>
-    <string name="app_mainTitle">웰컴 투 모바일 프로젝트</string>
+    <string name="app_mainTitle">welcome to mobile project</string>
     <string name="app_footer">FOOTER</string>
 </resources>

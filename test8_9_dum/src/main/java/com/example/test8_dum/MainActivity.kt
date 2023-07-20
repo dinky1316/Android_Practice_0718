@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         // 롱클릭 이벤트 리스너 확인
         // 바인딩 작업 샘플 코드, 앞에 모듈에서 가져오기
         // 버튼 하나를 가지고 확인
-        binding.btn1.setOnLongClickListener{
+        binding.btn1?.setOnLongClickListener{
             Toast.makeText(this,"버튼 롱클릭",Toast.LENGTH_LONG).show()
             true
         }
 
         // 숏클릭
-        binding.btn1.setOnClickListener{
+        binding.btn1?.setOnClickListener{
             Toast.makeText(this,"버튼 숏클릭",Toast.LENGTH_LONG).show()
             true
         }
