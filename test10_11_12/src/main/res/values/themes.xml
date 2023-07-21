@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Android_Practice_0718" parent="Theme.Material3.DayNight.NoActionBar">
+    <!--<style name="Base.Theme.Android_Practice_0718" parent="Theme.AppCompat.DayNight.DarkActionBar">-->
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<!--        // 실제 작업은 노 액션바에서 우리가 만든걸 적용할 예정-->
+        <item name="colorPrimary">#5D835F</item>
+<!--        <item name="windowNoTitle">false</item>-->
+<!--        <item name="windowActionBar">true</item>-->
+    </style>
+    <style name="Theme.Android_Practice_0718" parent="Base.Theme.Android_Practice_0718" />
+</resources>
