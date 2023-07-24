@@ -9,24 +9,45 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="액션바 영역"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Practice_0718">
         <activity
-            android:name=".FragTestActivity"
+            android:name=".test12.MainActivity378"
             android:exported="true" />
         <activity
-            android:name=".JetActivity"
+            android:name=".test12.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".test11.DrawerTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.ViewPager2_Recycle_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.ViewPager2_Fragment_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.Recycle2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.RecycleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.FragTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.JetActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test11.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".NotiActivity"
+            android:name=".test11.NotiActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".test11.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
