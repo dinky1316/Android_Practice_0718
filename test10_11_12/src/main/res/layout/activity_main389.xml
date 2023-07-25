@@ -6,10 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/main_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout
 
@@ -24,13 +21,23 @@
                 android:background="?attr/colorPrimary" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:text="Main Activity!!"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Extended FAB"
+                app:icon="@android:drawable/ic_input_add"
+                app:layout_anchor="@id/viewpager"
+                app:layout_anchorGravity="bottom|right"/>
 
         </LinearLayout>
 
@@ -42,7 +49,8 @@
             app:headerLayout="@layout/navigation_header"
             app:menu="@menu/menu_navigation" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
 
 
