@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
-
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         for (i in 1..3) {
             datas.add("Item $i")
         }
+
 
         // 프래그먼트 방식으로 설정 + 적용
         val adapter = MyFragmentPagerAdapter(this)
@@ -47,4 +47,5 @@ class MainActivity : AppCompatActivity() {
 
         override fun createFragment(position: Int): Fragment = fragments[position]
     }
+
 }

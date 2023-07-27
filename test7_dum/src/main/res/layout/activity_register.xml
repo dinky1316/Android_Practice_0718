@@ -22,35 +22,29 @@
         android:textSize="30dp" />
 
     <EditText
-        android:id="@+id/addName"
+        android:id="@+id/editName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="이름 입력" />
 
-    <EditText
-        android:id="@+id/addID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="아이디 입력" />
 
     <EditText
-        android:id="@+id/addPW"
+        android:id="@+id/editPW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="비밀번호 입력" />
 
     <EditText
-        android:id="@+id/addPW2"
+        android:id="@+id/editPW2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="비밀번호 확인" />
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/buttonInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

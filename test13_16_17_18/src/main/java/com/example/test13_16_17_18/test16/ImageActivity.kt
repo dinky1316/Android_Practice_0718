@@ -60,12 +60,17 @@ class ImageActivity : AppCompatActivity() {
                 )
                 val option = BitmapFactory.Options()
                 option.inSampleSize = calRatio
-
+                // 파일 입력 출력. 아래 코드
+                // 사진을 바이트 단위로 읽었음 imputStream : 이미지의 바이트 단위의 결과값
                 var inputStream = contentResolver.openInputStream(it.data!!.data!!)
+                // decodeStream : 바이트로 읽어서 실제 이미지의 타입으로 변환. 단위 bitmap으로 변환
+                // bitmap : 안드로이드에서 사용하는 이미지 단위. 보통 네트워크 파일 io 할 때 자주 이용
                 val bitmap = BitmapFactory.decodeStream(inputStream, null, option)
                 inputStream!!.close()
                 inputStream = null
-
+                // 사진 -> 바이트 읽어서 -> inputStream -> decodeStream -> bitmap -> 뷰에 출력
+                // 이미지, 영상 관련 인코딩 관심 있으면
+                // 강사님이 작업 한 것 주소 : https://github.com/lsy3709/travel_sample_app_spring_firebase
                 bitmap?.let {
                     Log.d("kkang", "결과 뷰에 적용 전")
                     // 결과 뷰에 갤러리에서 가져온 사진을 할당하는 부분
@@ -125,6 +130,7 @@ class ImageActivity : AppCompatActivity() {
                 SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
             // 안드로이드 시스템에서 정하는 DIRECTORY_PICTURES 정해져 있음
             val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            Log.d("dum", "storage의 위치 : $storageDir")
             // JPEG
             val file = File.createTempFile(
                 "JPEG_${timeStamp}_",
@@ -132,6 +138,7 @@ class ImageActivity : AppCompatActivity() {
                 storageDir
             )
             filePath = file.absolutePath
+            Log.d("dum", "filePath의 경로 : $filePath")
             // 카메라에서 찍은 사진에 접근 하기 위해서 콘텐츠 프로바이더에 요청
             // 요청시 매내페스트에서 정한 같은 문자열을 사용
             val photoURI: Uri = FileProvider.getUriForFile(

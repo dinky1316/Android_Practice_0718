@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -42,17 +43,19 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         )
         {
+            // 선택된 이미지를 리스트에 담기 전에 먼저 list 컬렉션 비우기
             list.clear()
             if (it.data?.clipData != null) {
                 val count = it.data!!.clipData?.itemCount
                 if (count != null) {
                     if (count > 10) {
-                        Toast.makeText(this@MainActivity, "사진 선택은 10장까지만 가능", Toast.LENGTH_SHORT)
+                        Toast.makeText(this@MainActivity, "사진 선택은 10장 까지만 가능", Toast.LENGTH_SHORT)
                             .show()
                     }
                 }
                 for (i in 0 until count!!) {
                     val imageUri = it.data!!.clipData?.getItemAt(i)?.uri
+                    Log.d("dum", "선택된 이미지의 내부 갤러리 공용 저장소의 위치 : $imageUri")
                     if (imageUri != null) {
                         list.add(imageUri)
                     }
@@ -102,7 +105,6 @@ class MainActivity : AppCompatActivity() {
                 false
             )
         )
-
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             val binnding = (holder as ViewHolder).binnding
