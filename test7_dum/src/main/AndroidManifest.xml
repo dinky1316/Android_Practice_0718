@@ -8,7 +8,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Practice_0718">
-
+        <activity
+            android:name=".test13_16_17_18"
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 주소록 사용 권한 허용 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 미디어 서버에 접근 시 허가 부분 변경이 됨. 일단 예전꺼 비교해서 -->
+    <!-- 세분화된 미디어 권한 -->
+    <!-- https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Android_Practice_0718">
+        <activity
+            android:name=".test16.test16multiimage.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test16.ImageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test13.MainActivity443"
+            android:exported="true" />
+        <activity
+            android:name=".test13.MainActivity424"
+            android:exported="false" />
+        <activity
+            android:name=".test13.MainActivity414"
+            android:exported="true" />
+        <activity
+            android:name=".test13.MainActivity408"
+            android:exported="true" />
+        <activity
+            android:name=".test13.MainActivity406"
+            android:exported="true" />
+        <activity
+            android:name=".test13.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test18.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test17.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test16.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test13.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 콘텐츠 프로바이더 사용하기 위해서 사전 작업 -->
+        <!-- 1) -->
+        <!-- authorities->각자 패키지 명으로 변경 -->
+        <!-- 예를 들어 패키지명 : com.example.test13_16_17_18.test16 -->
+        <!-- 변경 전 : com.example.ch16_provider.fileprovider -->
+        <!-- 변경 후 : com.example.test13_16_17_18.test16.fileprovider -->
+        <!-- 2) -->
+        <!-- 파일의 경로 위치를 res에 정의해서 가져와서 사용하기 -->
+        <!-- @xml/file_paths 경로 재사용하기 -->
+        <!-- (깃허브 경로) ch16_provider/src/main/res/xml/file_paths.xml -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.test13_16_17_18.test16.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
