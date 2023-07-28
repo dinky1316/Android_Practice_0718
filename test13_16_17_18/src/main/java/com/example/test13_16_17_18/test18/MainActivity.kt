@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.test13_16_17_18.databinding.ActivityMain4Binding
-
+// main 581 : 네트워크 테스트 코드
 // 경로 test18/src/main/java/com/example/test18/MainActivity577.kt
 
 // 간단히 와이파이 연결 확인

@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Practice_0718">
         <activity
+            android:name=".test18_reqres.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test18.MainActivity581"
+            android:exported="true" />
+        <activity
             android:name=".test17_shared.DetailActivity"
             android:exported="true" />
         <activity
